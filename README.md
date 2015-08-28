@@ -262,3 +262,6 @@ sudo supervisorctl restart mapa-de-medios
 
 Con esto podremos ir a http://dominio.com (dominio puesto en el virtualhost de nginx), y ver el proyecto listo para usarse.
 
+
+
+
