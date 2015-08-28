@@ -52,12 +52,12 @@ Código del proyecto Mapa de Medios
 
   * SSH:
   ```
-  git clone git@github.com:poderomedia/mapa-de-medios.git
+  git clone git@github.com:poderomedia/media-mapper.git
   ```
 
   * HTTPS (Para acceso público (sin llave SSH):
   ```
-  git clone https://github.com/poderomedia/mapa-de-medios.git
+  git clone https://github.com/poderomedia/media-mapper.git
 ```
 
 ### Instalar requerimientos
