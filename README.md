@@ -1,5 +1,5 @@
-# Mapa de medios
-Código de Mapa de Medios
+# Media Mapper
+Código del proyecto Mapa de Medios
 
 ## Instalación
 --------------
