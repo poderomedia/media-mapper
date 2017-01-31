@@ -1,6 +1,9 @@
 # mediamapper
 Mapa de Medios
 
+Aplicación con base de datos para mapear la propiedad de los medios.
+
+Para instalar la aplicación se requiere tener alguna experiencia en Django Framework y la configuración de un servidor con Apache2 y MySQL.
 Mapa de Medios está desarrollado para correr en un servidor Apache 2, MySQL y Django 1.8 (Python 2.7)
 Esta es una descripción de los pasos para instalar la aplicación pero no de los procesos externos a la app misma.
 
