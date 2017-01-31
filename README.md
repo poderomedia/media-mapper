@@ -14,3 +14,5 @@ Esta es una descripción de los pasos para instalar la aplicación pero no de lo
 La aplicación tiene un sitio público y un admin con mantenedores de medios, contenidos y control centralizado de mensajes de colaboración y rectificación.
 Se debe abrir una cuenta en mailchimp para usar el plugin de django para mandrill.
 La aplicación está en modo de desarrollo, para pasar a producción cambiar debug a false.
+Las imágenes de los directorios medio y uploads que están en mediamapper/media fueron eliminados de este repositorio.
+En el documento Virtualenv+Nginx+Supervisor hay un tutorial para instalar la aplicación con esas características. Puede ser útil pero no está actualizado.
