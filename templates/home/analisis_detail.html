@@ -1,0 +1,49 @@
+{% extends "home/base.html" %}
+{% block content %}
+<section class="section-article row-module row-module-s-top">
+      <div class="row">
+        <div class="col12 prefix2">
+          <nav class="breadcrumb">
+            <ul>
+              <li><i class="icon icon-16 flaticon solid right-square-2"></i></li>
+              <li><a href="{% url 'home:analisislist' %}">Análisis ›</a></li>
+              <li class="active">{{ object.titulo }}</li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col12 prefix2">
+          <article class="post">
+            <div class="post-title">
+              <h1>{{ object.titulo }}</h1>
+              <h2>{{ object.subtitulo }}</h2>
+              <div class="post-metadatos">
+                <ul>
+                  <li class="with-icon"><i class="icon icon-16 flaticon solid clock-1"></i> Publicado en {{ object.pais }} el {{ object.fecha }}</li>
+                  <li>por {{ object.autor }}</li>
+                </ul>                
+              </div>
+              <div class="row socialShareWrap">
+                
+                  <ul class="socialShare">
+                    <li class="socialShare-fb"><a target="_blank" title="Comparte este artículo en Facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://apps.poderopedia.org{{ request.get_full_path }}"><i class="icon icon-16 flaticon social facebook-4"></i> Facebook</a></li>
+                    <li class="socialShare-tw"><a target="_blank" title="Comparte este artículo en Twitter" href="https://twitter.com/intent/tweet?hashtags=mapademedios&original_referer=http://apps.poderopedia.org{{ request.get_full_path }}&text={{ object.titulo }}&url=http://apps.poderopedia.org{{ request.get_full_path }}&via=poderopedia" class="twitter-share-button" data-via="poderopedia" data-size="large" data-hash tags="mapademedios"><i class="icon icon-16 flaticon social twitter-4"></i> Twitter</a></li>
+                    <li class="socialShare-wa"><a href="whatsapp://send" data-text="Lee {{ object.titulo }}" data-href=""><i class="icon icon-16 flaticon social whatsapp-1"></i> WhatsApp</a></li>
+                  </ul>
+                
+              </div>  
+            </div>
+          
+            <div class="post-body text">
+
+              {{ object.cuerpo|safe }}
+
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+{% endblock %}
+

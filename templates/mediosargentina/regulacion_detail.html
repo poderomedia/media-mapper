@@ -1,0 +1,95 @@
+{% extends "mediosargentina/base.html" %}
+{% block content %}
+<section class="section-profile row-module row-module-s-top">
+    <div class="row">
+      <div class="col16">
+        <nav class="breadcrumb">
+          <ul>
+            <li><i class="icon icon-16 flaticon solid right-square-2"></i></li>
+            <li><a href="/mediosargentina/index">Medios Chile ›</a></li>
+            <li><a href="/mediosargentina/regulacion">Legislación ›</a></li>
+            <li class="active">{{ object.documento }}</li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+
+    <div class="row section-profile-header">
+      <div class="col16">
+        <div class="profile-wrapper">
+          <div class="profile-title">
+            <h1>{{ object.documento }}</h1>
+          </div>
+          <div class="profile-info">
+            <ul>
+              <li><i class="icon icon-16 flaticon solid repeat-4"></i> Información actualizada el {{ object.actualizado }}</li>
+              <li><i class="icon icon-16 flaticon stroke download-2"></i> Descargar <a href="{{ MEDIA_URL }}medios/medioschile.csv.zip">CSV</a>, <!-- <a href="#">XLS</a>, --><a href="{{ MEDIA_URL }}medios/medioschile.json.zip">JSON</a></li></ul>
+              <!-- <i class="icon icon-32 flaticon solid magic-wand-1"></i> <a href="{% url 'home:aporta' %}">Aportar información</a> -->
+              <a href="{% url 'home:aporta' %}" class="btn btn-info">Aporta información</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- <div class="row socialShareWrap">
+      <div class="col16">
+        <ul class="socialShare">
+          <li class="socialShare-fb"><a href="#"><i class="icon icon-16 flaticon social facebook-1"></i> Facebook</a></li>
+          <li class="socialShare-tw"><a href="#"><i class="icon icon-16 flaticon social twitter-1"></i> Twitter</a></li>
+          <li class="socialShare-wa"><a href="#"><i class="icon icon-16 flaticon social whatsapp-1"></i> WhatsApp</a></li>
+        </ul>
+      </div>
+    </div> -->    
+
+    <div class="row">
+      <div class="col16">
+        <div class="heading heading-s with-icon">
+          <span class="icon-heading">
+            <i class="icon icon-16 flaticon solid clipboard-2"></i>
+          </span>
+          <h4>Información de la norma</h4>
+        </div>
+        <table class="table table-info table-bordered table-condensed">
+          <tbody>
+    
+            {% if object.tipodocumento %}
+            <tr>
+              <th class="aright">Tipo de norma:</th>
+              <td class="text text-s">{{ object.tipodocumento }}</td>
+            </tr>
+            {% else %}
+            {% endif %}
+
+            {% if object.descripciondocumento %}
+            <tr>
+              <th class="aright">Descripción de la norma:</th>
+              <td class="text text-s">{{ object.descripciondocumento | linebreaks }}</td>
+            </tr>
+            {% else %}
+            {% endif %}
+
+            {% if object.actores %}
+            <tr>
+              <th class="aright">Actores involucrados:</th>
+              <td class="text text-s">{{ object.actores | linebreaks }}</td>
+            </tr>
+            {% else %}
+            {% endif %}
+
+            {% if object.linkdocumento %}
+            <tr>
+              <th class="aright">URL del documento:</th>
+              <td class="text text-s"><a target="_blank" href="{{ object.linkdocumento }}">{{ object.linkdocumento }}</a></td>
+            </tr>
+            {% else %}
+            {% endif %}
+
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+
+</section>    
+  
+{% endblock %}

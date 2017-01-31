@@ -1,0 +1,18 @@
+{% load staticfiles %}
+<link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}" />
+{% block content %}
+    <table>
+    <tr><td>Medio</td><td>Tipo</td><td>Género</td><td>Propietarios</td><td>xxx</td><td>xxx</td><td>xxx</td><td>xxx</td></tr>
+    {% for escrito in escrito_list %}
+        <tr><td><a href="{{ escrito.pk }}">{{ escrito.medio }}</a></td>
+        <td>{{ escrito.tipo }}</td>
+        <td>{{ escrito.genero }}</td>  
+        <td>{% for propietario in escrito.propietario.all %}{{ propietario }} · {% endfor %}</td>
+        <td>xxx</td>
+        <td>xxx</td>
+        <td>xxx</td>
+        <td>xxx</td>
+        </tr>
+    {% endfor %}
+    </table>
+{% endblock %}

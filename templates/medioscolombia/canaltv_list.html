@@ -1,0 +1,55 @@
+{% extends "medioscolombia/base.html" %}
+{% block content %}
+<section class="section-title row-module row-module-s-bottom">
+    <div class="row">
+      <div class="col16">
+        <div class="heading acenter">
+          <h1>Canales de Televisión de Colombia</h1>
+          <h2>Tenemos registrados {{ canaltv_list.count }} Canales de Televisión de Colombia. Conoce la <a href="{% url 'home:metodologia' %}">metodología</a> usada para esta investigación y descarga los <a href="{% url 'home:datos' %}">datos.</a></h2><br>
+         <a href="/home/agregarcanaltv" class="btn btn-info"><i class="icon icon-16 flaticon solid tv-1"></i>Agrega un Canal de TV</a>
+        </div>
+      </div>
+    </div>
+</section>
+
+<section class="row-module row-module-s-top">
+    <div class="row">
+
+<table id="TablaLista" class="display" width="100%" cellspacing="0">
+
+    <thead>
+    <tr>
+    <th width="5%" align="left">Medio</th>
+    <th width="15%" align="left"></th>
+    <th width="20%" align="left">Propietario</th>
+    <th width="15%" align="left">Señal</th>
+    <th width="15%" align="left">Cobertura</th>
+    <th width="15%" align="left">Grupo</th>
+    <th width="15%" align="left">Web</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    {% for canaltv in canaltv_list %}
+        <tr>
+        <td><img class="img-circle" src="{{ MEDIA_URL }}{{ canaltv.logo }}" width="50px"/></td>
+        <td><a href="{{ canaltv.pk }}">{{ canaltv.medio }}</a></td>
+        <td>{% for propietario in canaltv.propietario.all %}<a href="/medioscolombia/propietario/{{ propietario.id }}">{{ propietario }}</a>{% empty %}No hay información{% endfor %}</td>
+        <td>{{ canaltv.tipo | default:"No hay información" }}</td>
+        <td>{{ canaltv.cobertura | default:"Nacional" }}</td>
+        <td>{% if canaltv.grupo %}<a href="/medioscolombia/grupo/{{ canaltv.grupo.id }}">{{ canaltv.grupo }}</a>{% else %}No tiene Grupo{% endif %}</td> 
+        <td>{% if canaltv.sitioweb %}<a target="_blank" href="{{ canaltv.sitioweb }}">{{ canaltv.sitioweb | truncatechars:20 }}</a>{% else %}No hay información{% endif %}</td> 
+        </tr>
+    {% endfor %}
+    </tbody>
+    <tfoot>
+        <tr>
+            <td colspan="5">
+            </td>
+        </tr>
+    </tfoot>
+    </table>
+    </div>
+</section>
+
+{% endblock %}

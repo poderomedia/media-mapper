@@ -1,0 +1,191 @@
+{% extends "home/base.html" %}
+{% block content %}
+<section class="section-title row-module">
+  <div class="row">
+        <div class="col12 prefix1">
+        <a name="objeto"></a>
+            <div class="heading acenter">
+              <h1>Metodología</h1>
+             <h2> Para realizar el Mapa de Medios se consultó información de bases de datos públicas, de organismos regulatorios, asociaciones gremiales de medios, publicaciones de prensa y académicas, sitios web de empresas, se realizaron solicitudes de información a los propios medios, entrevistas y encuentros con académicos, expertos, periodistas y programadores. A continuación los detalles y la guía de cómo llevar a cabo un proyecto de este tipo. </h2>
+            </div>
+        </div>
+    </div>
+</section>
+          
+<section class="section-article list row-module">
+    <div class="row">
+        <aside class="col3">
+          <nav class="nav-aside">
+            <!--<ul>
+              <li><a href="#objeto">Objeto de estudio</a></li>
+              <li><a href="#etapas">Etapas</a></li>
+              <li><a href="#planificacion">Desarrollo</a></li>
+              <li><a href="#entrega">Entrega de productos</a></li>
+              <li><a href="#principios">Principios </a></li>
+            </ul>-->
+          </nav>
+        </aside>
+        <div class="col12 prefix1">
+
+        <div class="post">
+        <div class="post-body text">
+
+        <p>El Mapa de Medios de Chile y Colombia incluye información de medios, propietarios de medios, grupos de medios, ejecutivos principales, legislación y fuentes utilizadas para construir la base de datos.</p> 
+
+<p>La investigación fue realizada entre diciembre de 2014 y agosto de 2015 por los equipos de Poderopedia Chile y Poderopedia Colombia, mediante investigación documental, solicitudes de información, entrevistas y consultas con profesionales y expertos de ambos países.</p>
+
+<p>A diferencia de otros proyectos de bases de datos de medios y propiedad de medios que se concentran en detallar cuántos medios hay en un país según la organización periodística a la que pertenecen dichos medios, el Mapa de Medios de Chile y Colombia, elaborado por Poderopedia, se estructuró a partir de más variables que se detallan a continuación.</p> 
+
+<p>Los medios se organizaron:</p> 
+
+<nu>Por el tipo de soporte o canal de distribución de un Medio, independiente de la marca a la que pertenecen:</nu>
+
+<ul>
+<li>Medios Digitales</li> 
+  <ul>
+  <li>Nativos: cuando son medios creados exclusivamente en Internet</li>
+  <li>Asociado a un medio: cuando son medios creados en Internet por un medio que ya existía de antes en otro formato (impreso, radial, televisivo)</li>
+  </ul>
+
+<li>Medios Impresos</li>
+  <ul>
+  <li>Diarios</li>
+  <li>Revistas</li>
+  </ul> 
+
+<li>Radio</li>
+    <ul>
+      <li>AM</li>
+      <li>FM</li>
+      <li>AM y FM</li>
+    </ul>
+
+<li>Televisión</li>
+    <ul>
+      <li>Señal abierta</li>
+      <li>Cable</li>
+      <li>TDT (televisión digital terrestre)</li>
+    </ul>
+
+</ul>
+
+<nu>Por cobertura territorial:</nu>
+
+<ul>
+  <li>Nacional</li>
+  <li>Regional/Departamental</li>
+</ul>
+
+<nu>Por modelo de pago:</nu>
+
+<ul>
+  <li>Pago</li>
+  <li>Gratuito</li>
+</ul>
+
+<p>Esto significa que una marca de medios, por ejemplo, El Mercurio en Chile o El Tiempo en Colombia que tiene versiones en formato Impreso y Digital, está contabilizada en el Mapa de Medios como Medio Impreso y como Medio Digital.</p>
+
+<p>A nivel de estructura de propiedad y relaciones, se definió el siguiente modelo:</p>
+
+<ul>
+  <li>Un medio es una marca.</li> 
+  <p>Un medio tiene un propietario. Este propietario puede ser:</p>
+  <li>Una persona natural, o</li>
+  <li>Una empresa o institución</li>
+  <li>El propietario, cuando es una empresa puede tener socios accionistas y si es una institución, como una fundación, puede tener financistas.</li>
+  <li>El o los socios accionistas pueden ser socios mayoritarios de una o más empresas de medios. En este caso, si el o los socios accionistas tienen dos o más medios a través de una o más empresas, pueden ser considerados un Grupo de Medios.</li>
+</ul>
+
+<p>Dos ejemplos permiten ilustrar lo anterior:</p>
+
+<ul>
+  <li>País: Chile</li>
+  <li>Nombre de medio: El Mercurio</li>
+  <li>Tipo de medio: Impreso, Diario</li>
+  <li>Propietario: El Mercurio S.A.P.</li>
+  <li>Socios: El Mercurio S.A.P. es propiedad de Agustín Edwards Eastman (100 %)</li> 
+  <li>Grupo de Medios: El Mercurio es parte de Grupo El Mercurio</li>
+  <li>Controlado por: Agustín Edwards Eastman</li>
+</ul>
+
+<ul><li>País: Colombia</li>
+  <li>Nombre de medio: El Tiempo</li>
+  <li>Tipo de medio: Impreso, Diario</li>
+  <li>Propietario: Casa Editorial El Tiempo</li>
+  <li>Socios: Casa Editorial El Tiempo es propiedad de Inversiones Vistahermosa S A S (66,618183730 %), Inversegovia S A (28,381137504 %), Seguros de Vida Alfa S A (4,998463380 %), Liinus Van Pelt SAS (0,002214959 %) e Inverprogreso S A (0,000000427 %).</li>
+  <li>Grupo de Medios: El Tiempo es parte de Organización Luis Carlos Sarmiento Angulo.</li>
+  <li>Controlado por: Luis Carlos Sarmiento Angulo</li>
+</ul>
+
+<p>En tanto los Grupos de Medios se organizaron de la siguiente forma:</p>
+
+<li>Grupo de Medios: es la organización que mediante una o más empresas o socios posee dos o más medios de comunicación y se estructura como holding.</li>
+
+<p>Características de un Grupo de Medios:</p>
+
+<li>Posee dos o más medios y cada uno de esos medio posee un propietario</li>
+<li>Dicho propietario tiene uno o más socios accionistas</li>
+<li>Estos accionistas se reúnen bajo un Grupo de Medios</li>
+<li>El Grupo de Medios posee un controlador</li>
+
+<p>Un ejemplo de esto:</p>
+
+<li>Grupo: Grupo El Mercurio</li>
+<li>Controlado por: Agustín Edwards Eastman</li>
+<li>Medios del Grupo: 56 Medios, mediante una serie de empresas</li> 
+
+<h4>LEVANTAMIENTO DE INFORMACIÓN</h4>
+ 
+<p>Como parte del trabajo investigativo se reporteó sobre:</p>
+ 
+<nu>Medios de comunicación, propietarios y en qué otras áreas tienen negocios.</nu>
+ 
+<nu>Se realizó el levantamiento de las leyes que incide en la propiedad de los medios, en el ejercicio del periodismo, en la regulación de propiedad relativa a tipos de sociedades, libre competencia, concentración de empresas, publicidad estatal en medios de comunicación, transparencia sobre propiedad de medios y  acceso a información pública. Las legislaciones de investigación variaron de acuerdo al país en que se generó la investigación, aunque a nivel general se consideraron:</nu>
+ 
+<ul>
+  <li>Legislación regulatoria de medios de comunicación y ejercicio del periodismo.</li>
+  <li>Legislación regulatoria referente a tipos y características de propiedad, particularmente relativa a Sociedades Anónimas.</li>
+  <li>Legislación respecto de libre competencia y concentración de empresas.</li>
+  <li>Legislación en torno a avisaje gubernamental en medios de comunicación.</li>
+</ul>
+ 
+<p>Para determinar transparencia de información de propiedad:</p>
+ 
+<ul>
+  <li>Legislación vinculante a la transparencia de propiedad.</li>
+  <li>Legislación vinculante directamente a la transparencia de propiedad de medios.</li>
+  <li>Legislación vinculante a la libertad de expresión.</li>
+  <li>Legislación sobre el acceso a la información pública.</li>
+</ul>
+  
+<nu>En Chile se efectuaron 2 encuentros en la Escuela de Periodismo de la Universidad Alberto Hurtado con periodistas, investigadores, abogados, sociólogos, programadores, miembros de fundaciones y expertos en datos abiertos. En Colombia, 2 encuentros en el Centro Ático de la Universidad Javeriana.</nu>
+
+<p>En ambos casos se analizaron bases de datos, leyes y fuentes de información, así como los asistentes entregaron recomendaciones a los equipos de investigación.</p>
+
+<p>Mapa de Medios además provee:</p> 
+
+<ul>
+  <li>Las <a href="http://apps.poderopedia.org/mapademedios/datos/">bases de datos</a> creadas a partir de la recolección de información. Estas bases de datos están liberadas bajo Licencia Open Database License (ODbL) v1.0, por lo cual son descargables y reutilizables.</li> 
+  
+  <li>Una <a href="http://apps.poderopedia.org/mapademedios/api/">API de consulta</a> para desarrolladores.</li>
+  
+  <li>El <a href="http://apps.poderopedia.org/mapademedios/codigo/">Código fuente</a> de la aplicación. El Mapa de Medios está construido sobre la aplicación de ingreso y publicación de datos de código abierto MediaMapper. Este código incluye una plantilla de sitio web, similar a Mapa de Medios, la aplicación de administración y publicación de datos, y el modelo de base de datos. A su vez - y pensando en aquellas personas que no tienen conocimientos técnicos pero que quisieran hacer un proyecto como este - hemos diseñado un modelo de plantillas de hojas de cálculo con ejemplos de cómo ingresar datos para luego incluirlos en el Mapa de Medios. <a href="http://apps.poderopedia.org/mapademedios/contacto/">Sólo debes contactarnos</a>.</li>
+</ul>
+ 
+<h4>APORTAR NUEVA INFORMACIÓN</h4>
+                            
+<p>Mapa de Medios permite a los usuarios aportar contenido a sus bases de datos a fin de incrementar la información y actualizaciones relativas a la propiedad de los medios de comunicación en Chile, Colombia y de otros países.</p>
+ 
+<p>Dicho aporte, entendido como una actividad participativa voluntaria, se realiza mediante los formularios de Aporta Información disponibles en este sitio web.</p>
+
+        
+
+</div>
+</div>
+</div>
+</div>
+
+</section>    
+
+{% endblock %}
+

@@ -1,0 +1,23 @@
+{% extends "mediosargentina/base.html" %}
+{% load forms_builder_tags %}
+{% block content %}
+<section class="section-title row-module">
+  <div class="row">
+        <div class="col16">
+            <div class="heading acenter">
+              <h2>Gracias</h2>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section-title row-module">
+<div class="row">
+        <div class="col16">
+    {% render_built_form id=3 %}
+		</div>
+    </div>
+</section>    
+
+{% endblock %}
+

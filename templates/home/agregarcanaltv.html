@@ -1,0 +1,143 @@
+{% extends "home/base.html" %}
+{% load forms_builder_tags %}
+{% block content %}
+<section class="section-title row-module">
+  <div class="row">
+        <div class="col16">
+            <div class="heading acenter">
+                <h1>Nuevo canal de televisión</h1>
+                <h2>Aporta información sobre un nuevo canal de televisión a Mapa de Medios.</h2>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="row-module row-module-s-top">
+<div class="row">
+<form class="form"  action="/forms/agregar-canal-de-tv/" method="post">
+    <div class="col8 prefix4">
+        {% csrf_token %}
+
+        <div class="control-group">
+        <label class="control-label" for="id_nombre_medio">Nombre Medio:</label> 
+        <div class="controls">
+        <input class="charfield required" id="id_nombre_medio" maxlength="2000" name="nombre_medio" required="" type="text" /></div></div>
+        
+        <div class="control-group">
+        <label class="control-label" for="id_pais">País:</label> 
+        <div class="controls">
+        <select class="choicefield required" id="id_pais" name="pais" required="">
+        <option value="" selected="selected"></option>
+        <option value="Chile">Chile</option>
+        <option value="Colombia">Colombia</option>
+        </select></div></div>
+
+        <div class="control-group">
+        <label class="control-label" for="id_senal_abierta_o_cable_0">Señal Abierta o Cable:</label> 
+        <div class="controls">
+        <ul id="id_senal_abierta_o_cable">
+        <li>
+        <label for="id_senal_abierta_o_cable_0">
+        <input class="multiplechoicefield" id="id_senal_abierta_o_cable_0" name="senal_abierta_o_cable" type="checkbox" value="Abierto" /> Abierto</label>
+        </li>
+        <li>
+        <label for="id_senal_abierta_o_cable_1">
+        <input class="multiplechoicefield" id="id_senal_abierta_o_cable_1" name="senal_abierta_o_cable" type="checkbox" value="Cable" /> Cable</label>
+        </li>
+        </ul></div></div>
+
+        <div class="control-group">
+        <label class="control-label" for="id_ano_de_fundacion">Año de Fundación:</label> 
+        <div class="controls">
+        <input class="datefield" id="id_ano_de_fundacion" name="ano_de_fundacion" type="date" />
+        </div></div>
+
+        <div class="control-group">
+        <label class="control-label" for="id_genero_o_tipo_de_contenido">Género o tipo de contenido:</label><div class="controls">
+        <select class="choicefield" id="id_genero_o_tipo_de_contenido" name="genero_o_tipo_de_contenido">
+        <option value="" selected="selected"></option>
+        <option value="Generalista">Generalista</option>
+        <option value="Noticias">Noticias</option>
+        <option value="Deportes">Deportes</option>
+        <option value="Entretención">Entretención</option>
+        <option value="Otros">Otros</option>
+        </select></div></div>
+
+        <div class="control-group">
+        <label class="control-label" for="id_direccion_sede_del_medio">Dirección (sede del medio):</label> 
+        <div class="controls">
+        <input class="charfield" id="id_direccion_sede_del_medio" maxlength="2000" name="direccion_sede_del_medio" placeholder="Ej.: Calle y nº - Comuna - Ciudad" type="text" /></div></div>
+        
+        <div class="control-group">
+        <label class="control-label" for="id_sitio_web">Sitio WEB:</label> 
+        <div class="controls">
+        <input class="urlfield" id="id_sitio_web" maxlength="2000" name="sitio_web" placeholder="http://..." type="url" /></div></div>
+
+        <div class="control-group">
+        <label class="control-label" for="id_cobertura">Cobertura:</label> 
+        <div class="controls">
+        <select class="choicefield" id="id_cobertura" name="cobertura">
+        <option value="" selected="selected"></option>
+        <option value="Nacional">Nacional</option>
+        <option value="Regional">Regional</option>
+        <option value="Comunal">Comunal</option>
+        </select></div></div>
+
+        <div class="control-group">
+        <label class="control-label" for="id_detalle_de_cobertura">Detalle de Cobertura:</label> 
+        <div class="controls">
+        <textarea class="charfield" cols="40" id="id_detalle_de_cobertura" maxlength="2000" name="detalle_de_cobertura" placeholder="Región - Comuna - Ciudad" rows="10">
+        </textarea></div> <span class="helptext">Ingrese aquí el detalle de la cobertura del medio</span></div>
+        
+        <div class="control-group">
+        <label class="control-label" for="id_propietario_empresa_o_compania">Propietario (Empresa o Compañía):</label> 
+        <div class="controls">
+        <input class="charfield" id="id_propietario_empresa_o_compania" maxlength="2000" name="propietario_empresa_o_compania" type="text" /> </div>
+        <span class="helptext">Nombre de la empresa o compañía que maneja el medio, no de sus socios y/o dueños</span></div>
+
+        <div class="control-group">
+        <label class="control-label" for="id_socios_o_duenos_de_la_empresa">Socios o Dueños de la empresa:</label> 
+        <div class="controls">
+        <textarea class="charfield" cols="40" id="id_socios_o_duenos_de_la_empresa" maxlength="2000" name="socios_o_duenos_de_la_empresa" placeholder="Nombre Socio - Porcentaje (ej. 100 %)" rows="10">
+        </textarea> </div>
+        <span class="helptext">Socios que comparten la propiedad de la empresa y sus respectivos porcentajes (si están disponibles)</span></div>
+        
+        <div class="control-group">
+        <label class="control-label" for="id_grupo_de_medios">Grupo de Medios:</label> 
+        <div class="controls">
+        <input class="charfield" id="id_grupo_de_medios" maxlength="2000" name="grupo_de_medios" type="text" /> </div>
+        <span class="helptext">Si el medio pertenece a un grupo de medios como Televisa, El Mercurio, etc. indíquelo aquí</span></div>
+        
+        <div class="control-group">
+        <label class="control-label" for="id_rating">Rating:</label> 
+        <div class="controls">
+        <textarea class="charfield" cols="40" id="id_rating" maxlength="2000" name="rating" rows="10">
+        </textarea> </div>
+        <span class="helptext">Si usted posee información sobre rating del medio -o una URL donde ir-, indíquela aquí</span></div>
+
+        <div class="control-group">
+        <label class="control-label" for="id_ejecutivos_del_medio">Ejecutivos del medio:</label> 
+        <div class="controls">
+        <textarea class="charfield" cols="40" id="id_ejecutivos_del_medio" maxlength="2000" name="ejecutivos_del_medio" placeholder="Nombre - Cargo" rows="10">
+        </textarea> </div>
+        <span class="helptext">Director/a, Editor/a General, Representante Legal, etc.</span></div>
+
+        <div class="control-group">
+        <label class="control-label" for="id_extra">Extra:</label> 
+        <div class="controls">
+        <textarea class="charfield" cols="40" id="id_extra" maxlength="2000" name="extra" rows="10">
+        </textarea> </div>
+        <span class="helptext">Información que desee compartir sobre el medio y no es clasificable en los ítems anteriores</span></div>
+
+        <div style="clear:left;">&nbsp;</div>
+        <div class="control-actions">
+              <input type="submit" class="btn btn-full btn-primary" value="Enviar" />
+        </div>
+    </div>
+</form>
+
+</div>
+</section>    
+
+{% endblock %}
+

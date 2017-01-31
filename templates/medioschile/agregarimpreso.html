@@ -1,0 +1,23 @@
+{% extends "medioschile/base.html" %}
+{% load forms_builder_tags %}
+{% block content %}
+<section class="section-title row-module">
+  <div class="row">
+        <div class="col16">
+            <div class="heading acenter">
+              <h1>Aporta información a Mapa de Medios</h1>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section-title row-module">
+	<div class="row">
+        <div class="col16">	
+    {% render_built_form id=1 %}
+		</div>
+    </div>
+</section>    
+
+{% endblock %}
+

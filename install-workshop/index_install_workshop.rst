@@ -1,2 +1,0 @@
-*MediaMapper Install Workshop*
-Mediaparty

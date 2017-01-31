@@ -1,0 +1,60 @@
+{% extends "mediosargentina/base.html" %}
+{% block content %}
+<section class="section-title row-module row-module-s-bottom">
+    <div class="row">
+      <div class="col16">
+        <div class="heading acenter">
+          <h1>Radios de Chile</h1>
+          <h2>Tenemos registradas {{ radio_list.count }} Radios de Chile. Conoce la <a href="/mediosargentina/metodologia">metodología</a> usada para esta investigación y <a href="{{ MEDIA_URL }}medios/medioschile.radio.zip">descarga los datos</a>.</h2><br>
+         <a href="/home/agregarradio" class="btn btn-info"><i class="icon icon-16 flaticon solid microphone-1"></i>Agrega una Radio</a>
+        </div>
+      </div>
+    </div>
+</section>
+
+<section class="row-module row-module-s-top">
+    <div class="row">
+      <div class="col16">
+
+        <!-- <div class="pager-info">
+          <span class="right">Descargar: <a href="#">CSV</a>, <a href="#">XLS</a>, <a href="#">JSON</a></span>
+        </div> -->
+
+<table id="TablaLista" class="display" width="100%" cellspacing="0">
+
+    <thead>
+    <tr>
+    <th width="5%" align="left">Medio</th>
+    <th width="15%" align="left"></th>
+    <th width="20%" align="left">Propietario</th>
+    <th width="10%" align="left">Cobertura</th>
+    <th width="10%" align="left">Región</th>
+    <th width="15%" align="left">Grupo</th>
+    <th width="15%" align="left">Web</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    {% for radio in radio_list %}
+        <tr>
+        <td><img class="img-circle" src="{{ MEDIA_URL }}{{ radio.logo }}" width="50px"/></td>
+        <td><a href="{{ radio.pk }}">{{ radio.medio }}</a></td>
+        <td>{% for propietario in radio.propietario.all %}<a href="/mediosargentina/propietario/{{ propietario.id }}">{{ propietario }}</a>{% empty %}No hay información{% endfor %}</td>
+        <td>{{ radio.cobertura | default:"No hay información" }}</td>
+        <td>{% for region in radio.region.all %}{{ region }} · {% empty %}No hay información{% endfor %}</td>
+        <td>{% if radio.grupo %}<a href="/mediosargentina/grupo/{{ grupo.id }}">{{ radio.grupo }}</a>{% else %}No hay información{% endif %}</td>
+        <td>{% if radio.sitioweb %}<a target="_blank" href="{{ radio.sitioweb }}">{{ radio.sitioweb | truncatechars:20 }}</a>{% else %}No hay información{% endif %}</td> 
+        </tr>
+    {% endfor %}
+    </tbody>
+    <tfoot>
+        <tr>
+            <td colspan="5"></td>
+        </tr>
+    </tfoot>
+    </table>
+    </div>
+   </div>
+</section>
+
+{% endblock %}

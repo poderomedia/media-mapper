@@ -1,0 +1,1 @@
+from medioschile.models import Ejecutivo,Empresario,GeneroEscrito,Region,Comuna,Ciudad,Sector,Periodicidad,Propietario,TipoSociedad,PaisSociedad,Sociedad,Escrito,GeneroRadio,Radio,GeneroCanalTV,CanalTV,GeneroMedioDigital,MedioDigital,Grupo,Cargo,CargoEjecutivo,Autor,Fuente,TipoDocumento,Regulacion

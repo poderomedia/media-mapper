@@ -1,0 +1,46 @@
+{% extends "home/base.html" %}
+{% block content %}
+<section class="section-title row-module">
+	<div class="row">
+        <div class="col12 prefix1">
+          	<div class="heading acenter">
+            	<h1>API de Mapa de Medios</h1>
+          	</div>
+       	</div>
+    </div>
+</section>
+          
+<section class="section-article list row-module">
+    <div class="row">
+        <aside class="col3">
+          <nav class="nav-aside">
+            <!-- <h6>Navega:</h6>
+            <ul>
+              <li><a href="#">API Medios de Chile</a></li>
+              <li><a href="#">API Medios de Colombia</a></li>
+            </ul>-->
+          </nav>
+        </aside>
+        <div class="col12 prefix1">
+
+          <div class="post">
+
+            <div class="post-body text">
+        <p>Estamos configurando una API para que aplicaciones externas intercambien información con nuestra base de datos. Cuando sea publicada estará disponible en forma abierta, si usted tiene un requerimiento especial o sus aplicaciones usarán nuestros datos en forma intensiva, <a href="{% url 'home:contacto' %}">escríbanos.</a></p>
+        <p>La API de este proyecto se está haciendo con Django REST Framework.</p>
+			  <p></p> 
+			  <p></p>
+        </div>
+        </div>
+
+        </div>
+ 
+        
+
+
+
+    </div>
+</section>    
+
+{% endblock %}
+

@@ -1,0 +1,206 @@
+{% extends "medioscolombia/base.html" %}
+{% block content %}
+<section class="section-profile row-module row-module-s-top">
+    <div class="row">
+      <div class="col16">
+        <nav class="breadcrumb">
+          <ul>
+            <li><i class="icon icon-16 flaticon solid right-square-2"></i></li>
+            <li><a href="/medioscolombia/index">Medios Colombia ›</a></li>
+            <li><a href="/medioscolombia/grupo">Grupos de Medios ›</a></li>
+            <li class="active">{{ object.grupo }}</li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+
+    <div class="row section-profile-header">
+      <div class="col16">
+        <div class="profile-wrapper">
+            <div class="profile-logo">
+            <p><img src="{{ MEDIA_URL }}medios/business.png" width="110" /></p>
+            </div>
+          <div class="profile-title">
+            <h1>{{ object.grupo }}</h1>
+          </div>
+          <div class="profile-info">
+            <ul>
+              <li><i class="icon icon-16 flaticon solid repeat-4"></i> Información actualizada el {{ object.actualizado }}</li>
+              <li><i class="icon icon-16 flaticon stroke download-2"></i> Descargar <a href="{{ MEDIA_URL }}medios/medioscolombia_csv.csv">CSV</a>, <a href="{{ MEDIA_URL }}medios/medioscolombia_xls.xls">XLS</a>, <a href="{{ MEDIA_URL }}medios/medioscolombia_json.json">JSON</a></li></ul>
+              <!-- <i class="icon icon-32 flaticon solid magic-wand-1"></i> <a href="{% url 'home:aporta' %}">Aportar información</a> -->
+              <a href="{% url 'home:aporta' %}" class="btn btn-info">Aporta información</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row socialShareWrap">
+      <div class="col16">
+        <ul class="socialShare">
+          <li class="socialShare-fb"><a title="Comparte este Grupo de Medios en Facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://apps.poderopedia.org{{ request.get_full_path }}"><i class="icon icon-16 flaticon social facebook-4"></i> Facebook</a></li>
+          <li class="socialShare-tw"><a title="Comparte este Grupo de Medios en Twitter" href="https://twitter.com/intent/tweet?hashtags=mapademedios&original_referer=http://apps.poderopedia.org{{ request.get_full_path }}&text=Conoce%20{{ object.grupo }}%20y%20todos%20sus%20medios&url=http://apps.poderopedia.org{{ request.get_full_path }}&via=poderopedia" class="twitter-share-button" data-via="poderopedia" data-size="large" data-hash tags="mapademedios"><i class="icon icon-16 flaticon social twitter-4"></i> Twitter</a></li>
+          <li class="socialShare-wa"><a href="whatsapp://send" data-text="Conoce {{ object.grupo }} y todos sus medios:" data-href=""><i class="icon icon-16 flaticon social whatsapp-1"></i> WhatsApp</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col16">
+        <div class="heading heading-s with-icon">
+          <span class="icon-heading">
+            <i class="icon icon-16 flaticon solid clipboard-2"></i>
+          </span>
+          <h4>Información Grupo de Medios</h4>
+        </div>
+        <table class="table table-info table-bordered table-condensed">
+          <tbody>
+    
+            {% if object.paisorigen %}
+            <tr>
+              <th class="aright">País de origen:</th>
+              <td class="text text-s">{{ object.paisorigen }}</td>
+            </tr>
+            {% else %}
+            {% endif %}
+
+            {% if object.otrosnegociosgrupo.all %}
+            <tr>
+              <th class="aright">Otros negocios del Grupo:</th>
+              <td class="text text-s">{% for otros in object.otrosnegociosgrupo.all %}{{ otros }} · {% endfor %}
+              </td>
+            </tr>
+            {% else %}
+            {% endif %}
+            
+
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col16">
+        <div class="heading heading-s with-icon">
+          <span class="icon-heading">
+            <i class="icon icon-16 flaticon solid government-1"></i>
+          </span>
+          <h4>Estructura de Propiedad</h4>
+        </div>
+
+        <table class="table table-info table-bordered table-condensed">
+          <tbody>
+
+            {% if object.controladorgrupo %}
+            <tr>
+              {% if object.linkgrupo %}           
+              <th class="aright">{{ object.grupo }} es controlado por:</th>
+              <td class="text text-s"><a target="_blank" href="{{ object.linkgrupo }}">{{ object.controladorgrupo }}</a></td>
+              {% else %}
+              <th class="aright">{{ object.grupo }} es controlado por:</th>
+              <td class="text text-s">{{ object.controladorgrupo }}</td>
+              {% endif %}
+            {% elif object.fundaciongrupo %}
+            <tr>
+              <th class="aright">{{ object.grupo }} es controlado por:</th>
+              <td class="text text-s"><a href="/medioscolombia/propietario/{{ object.fundaciongrupo.id }}">{{ object.fundaciongrupo }}</a></td>
+            </tr>
+            {% else %}
+            <tr>
+              <th class="aright">¿Tienes información sobre la propiedad de {{ object.grupo }}?</th>
+              <td class="text text-s"><a href="{% url 'home:aporta' %}">Aporta información a Mapa de Medios.</a></td>
+            </tr>
+            {% endif %}
+
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+<div class="row">
+  <div class="col16">
+          <div class="heading heading-s with-icon">
+            <span class="icon-heading">
+              <i class="icon icon-16 flaticon solid clipboard-2"></i>
+            </span>
+            <h4>Medios del Grupo</h4>
+          </div>
+
+<table id="TablaLista2" class="display" width="100%" cellspacing="0">
+<thead>
+    <tr>
+    <th width="10%" align="left"></th>
+    <th width="20%" align="left">Medio</th>
+    <th width="25%" align="left">Tipo de Medio</th>
+    <th width="45%" align="left">Empresa</th>
+    </tr>
+</thead>
+
+<tbody>
+  {% if object.canaltvsgrupo %}
+      {% for canaltv in object.canaltvsgrupo.all %}
+  <tr>
+    <td><img class="img-circle" src="{{ MEDIA_URL }}{{ canaltv.logo }}" width="50px"/></td>
+  <td>
+    <a href="/medioscolombia/canaltvlist/{{ canaltv.id }}">{{ canaltv.medio }}</a>
+  </td>
+  <td>Canal de TV</td>
+    <td>{% for canaltv in canaltv.propietario.all %}<a href="/medioscolombia/propietario/{{ canaltv.pk }}">{{ canaltv.propietario }} · </a>{% endfor %}</td>
+  </tr>
+  {% endfor %}
+  {% else %}
+  {% endif %}
+  {% if object.escritosgrupo %}
+      {% for escrito in object.escritosgrupo.all %}
+  <tr>
+    <td><img class="img-circle" src="{{ MEDIA_URL }}{{ escrito.logo }}" width="50px"/></td>
+  <td>
+    <a href="/medioscolombia/escritolist/{{ escrito.id }}">{{ escrito.medio }}</a>
+  </td>
+  <td>Medio Impreso</td>
+    <td>{% for escrito in escrito.propietario.all %}<a href="/medioscolombia/propietario/{{ escrito.pk }}">{{ escrito.propietario }} · </a>{% endfor %}</td>
+  </tr>
+  {% endfor %}
+  {% else %}
+  {% endif %}
+  {% if object.radiosgrupo %}
+      {% for radio in object.radiosgrupo.all %}
+  <tr>
+    <td><img class="img-circle" src="{{ MEDIA_URL }}{{ radio.logo }}" width="50px"/></td>
+  <td>
+    <a href="/medioscolombia/radiolist/{{ radio.id }}">{{ radio.medio }}</a>
+  </td>
+  <td>Radio</td>
+    <td>{% for radio in radio.propietario.all %}<a href="/medioscolombia/propietario/{{ radio.pk }}">{{ radio.propietario }} · </a>{% endfor %}</td>
+  </tr>
+  {% endfor %}
+  {% else %}
+  {% endif %}
+  {% if object.digitalesgrupo %}
+      {% for mediodigital in object.digitalesgrupo.all %}
+  <tr>
+    <td><img class="img-circle" src="{{ MEDIA_URL }}{{ mediodigital.logo }}" width="50px"/></td>
+  <td>
+    <a href="/medioscolombia/mediodigitallist/{{ mediodigital.id }}">{{ mediodigital.medio }}</a>
+  </td>
+  <td>Medio Digital</td>
+    <td>{% for mediodigital in mediodigital.propietario.all %}<a href="/medioscolombia/propietario/{{ mediodigital.pk }}">{{ mediodigital.propietario }}</a>{% endfor %}</td>
+  </tr>
+  {% endfor %}
+  {% else %}
+  {% endif %}
+</tbody>
+<tfoot>
+        <tr>
+            <td colspan="5">
+            </td>
+        </tr>
+</tfoot>
+</table>
+
+  </div>
+</div>
+
+
+</section>    
+  
+{% endblock %}

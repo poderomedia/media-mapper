@@ -1,0 +1,55 @@
+{% extends "home/base.html" %}
+{% block content %}
+<section class="section-title row-module">
+  <div class="row">
+        <div class="col12 prefix1">
+        <a name="que"></a>
+            <div class="heading acenter">
+              <h1>Código</h1>
+            </div>
+        </div>
+  </div>
+</section>
+
+<section class="section-article list row-module">
+    <div class="row">
+        <aside class="col3">
+          <nav class="nav-aside">
+            <!--<ul>
+              <li><a href="#que">Código</a></li>
+              <li><a href="#quienes">Uso del código</a></li>
+              <li><a href="#como">Optimización del código</a></li>
+            </ul>-->
+          </nav>
+        </aside>
+
+        <div class="col12 prefix1">
+
+          <div class="post">
+          <div class="post-body text">
+            <p>Uno de los objetivos de este proyecto es fomentar el uso de la aplicación que se utilizó para hacer los Mapas de Medios de Chile y Colombia en la creación de otros mapas en otros países de la región y del mundo. Para esto hemos creado un repositorio público en Github, desde donde se puede descargar el código necesario para hacer una aplicación/sitio web de este tipo, y el código de Mapa de Medios en particular.</p>
+            <p>Los repositorios son:</p>
+            <ul>
+              <li><a href="https://github.com/poderomedia/mapa-de-medios">Mapa de Medios</a>: Repositorio donde encontrará el código completo de este proyecto y la explicación sobre cómo usarlo. Si necesita orientación, <a href="{% url 'home:contacto' %}">podemos ayudarle.</a></li>
+              <li><a href="https://github.com/poderomedia/media-mapper">Media Mapper</a>: Repositorio con las instrucciones detalladas sobre los requisitos y la forma de proceder para crear y mantener un proyecto de este tipo.</li>
+            </ul>
+            <p>Esta aplicación fue desarrollada en Django (Python Framework), con una base de datos MySQL y corre desde un servidor Apache.</p>
+            <p>Los contenidos del sitio web están licenciados con Creative Commons 3.0, lo cual te permite:</p> 
+            <ul><li>Compartir: copiar y redistribuir el material en cualquier medio o formato.</li>
+              <li>Adaptar: remezclar, transformar y crear a partir del material.</li>
+              <li>Para cualquier propósito, incluso comercialmente.</li></ul>
+
+
+            <a name="quienes"></a>
+
+            <a name="como"></a>
+            
+          </div>
+          </div>
+
+        </div>
+    </div>
+</section>  
+
+{% endblock %}
+

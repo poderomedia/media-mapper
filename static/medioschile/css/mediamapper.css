@@ -1,0 +1,22 @@
+.img-rounded {
+  padding: 4px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  -webkit-transition: all .2s ease-in-out;
+       -o-transition: all .2s ease-in-out;
+          transition: all .2s ease-in-out;
+}
+
+.img-circle {
+  padding: 3px;
+  border: 1px solid #ddd;
+  float: left;
+  margin-top: 2px;
+  margin-bottom: 2px;
+  margin-left: 2px;
+  margin-right: 10px;
+  border-radius: 50%;
+  -webkit-transition: all .2s ease-in-out;
+       -o-transition: all .2s ease-in-out;
+          transition: all .2s ease-in-out;
+

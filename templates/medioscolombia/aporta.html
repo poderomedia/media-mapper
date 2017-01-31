@@ -1,0 +1,78 @@
+{% extends "medioscolombia/base.html" %}
+{% load forms_builder_tags %}
+{% block content %}
+<section class="section-title row-module">
+  <div class="row">
+        <div class="col16">
+            <div class="heading acenter">
+              <h1>Aporta información a Mapa de Medios</h1>
+              <h2>A través de este formulario puede aportar o actualizar datos sobre un medio, una empresa u otra entidad que esté en Mapa de Medios. Si tiene información nueva o posee datos más actuales que los nuestros, ayúdenos a mejorar nuestra base de datos.</h2>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="row-module row-module-s-top">
+<div class="row">
+    <div class="col8 prefix4">  
+<form class="form"  action="/forms/aportar-datos-sobre-un-medio-de-mapa-de-medios/" method="post">
+        <input type='hidden' name='csrfmiddlewaretoken' value='slE5IgeKSuuubiJxqkZyAmAtSZBYugOK' />
+        <div class="control-group">
+            <label class="control-label" for="id_nombre_medio">Nombre Medio/Empresa:</label>
+            <div class="controls">
+            <input class="charfield required" id="id_nombre_medio" maxlength="2000" name="nombre_medio" required="" type="text" />
+            </div>
+        </div>
+        <div class="control-group">
+            <label for="id_pais">País:</label> <select class="choicefield required" id="id_pais" name="pais" required="">
+            <option value="" selected="selected"></option>
+            <option value="Chile">Chile</option>
+            <option value="Colombia">Colombia</option>
+            </select>
+        </div>
+        <div class="control-group">
+            <label class="control-label" for="id_tipo_de_medio">Tipo de Medio/Empresa:</label>
+            <div class="controls">
+            <select class="choicefield required" id="id_tipo_de_medio" name="tipo_de_medio" required="">
+            <option value="" selected="selected"></option>
+            <option value="Medio Escrito">Medio Escrito</option>
+            <option value="Canal de TV">Canal de TV</option>
+            <option value="Radio">Radio</option>
+            <option value="Medio Digital">Medio Digital</option>
+            <option value="Empresa">Empresa/Institución</option>
+            </select>
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label" for="id_informacion_que_desea_entregarnos">Información que desea entregarnos:</label>
+            <div class="controls">
+            <textarea class="charfield required" cols="40" id="id_informacion_que_desea_entregarnos" maxlength="2000" name="informacion_que_desea_entregarnos" required="" rows="10">
+            </textarea>
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label" for="id_fuente_de_informacion">Fuente de información:</label>
+            <div class="controls">
+            <textarea class="charfield" cols="40" id="id_fuente_de_informacion" maxlength="2000" name="fuente_de_informacion" rows="10">
+            </textarea>
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label" for="id_link_a_la_fuente_de_informacion">Link a la fuente de información:</label>
+            <div class="controls">
+            <input class="urlfield" id="id_link_a_la_fuente_de_informacion" maxlength="2000" name="link_a_la_fuente_de_informacion" type="url" />
+            </div>
+        </div>
+        <div style="clear:left;">&nbsp;</div>
+        <div class="control-actions">
+              <input type="submit" class="btn btn-full btn-primary" value="Enviar" />
+        </div>
+</form>
+
+  </div>
+</div>
+</section> 
+    
+
+{% endblock %}
+

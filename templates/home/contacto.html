@@ -1,0 +1,48 @@
+{% extends "home/base.html" %}
+{% block content %}
+<section class="section-title row-module">
+  <div class="row">
+        <div class="col16">
+            <div class="heading acenter">
+              <h1>Escribe al equipo de Mapa de Medios</h1>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="row-module row-module-s-top">
+<div class="row">
+<form class="form" action="/forms/contacto/" method="post">
+    <div class="col8 prefix4">
+        {% csrf_token %}
+
+        <div class="control-group">
+        <label class="control-label" for="id_nombre">Nombre:</label>
+        <div class="controls">
+        <input class="charfield required" id="id_nombre" maxlength="2000" name="nombre" required="" type="text" />
+        </div></div>
+
+        <div class="control-group">
+        <label class="control-label" for="id_e_mail">E-mail:</label>
+        <div class="controls">
+        <input class="emailfield required" id="id_e_mail" maxlength="2000" name="e_mail" required="" type="email" />
+        </div></div>
+
+        <div class="control-group">
+        <label class="control-label" for="id_mensaje">Mensaje:</label>
+        <div class="controls">
+        <textarea class="charfield required" cols="40" id="id_mensaje" maxlength="2000" name="mensaje" required="" rows="10">
+        </textarea>
+        </div></div>
+
+        <div style="clear:left;">&nbsp;</div>
+        <div class="control-actions">
+        <input type="submit" class="btn btn-full btn-primary" value="Enviar" />
+        </div>
+        </div>
+    </form>
+</div>
+</section> 
+
+{% endblock %}
+
