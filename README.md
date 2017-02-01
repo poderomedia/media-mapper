@@ -12,7 +12,7 @@ Esta es una descripción de los pasos para instalar la aplicación pero no de lo
 3. Crear una base de datos MySQL con nombre mmapper e importar la base de datos actual que viene con el proyecto (MediosChile y MediosColombia) (mmapper.sql).
 4. Instalar pip si es que no está y correr pip install -r path/to/requeriments.txt, eso debe instalar django y todos los requerimientos.
 5. Cargar y modificar, según las rutas locales, el archivo mediamapper.conf en los virtual hosts de Apache. esto es para salir a través del servidor web.
-6. Realizar el proceso de configuración y puesta en marcha habitual de Django. Configurar settings.py. Se necesita crear un nuevo superusuario de django para administrar la aplicación.
+6. Realizar el proceso de configuración y puesta en marcha habitual de Django, incluyendo las migraciones de los modelos que están en models.py. Configurar settings.py. Se necesita crear un nuevo superusuario de django para administrar la aplicación. Cualquier duda en el sitio oficial de django se puede revisar el tutorial de inicio: [Tutorial Django 1.8](https://docs.djangoproject.com/en/1.8/intro/)
 
 La aplicación tiene un sitio público y un admin con mantenedores de medios, contenidos y control centralizado de mensajes de colaboración y rectificación.
 Se debe abrir una cuenta en mailchimp para usar el plugin de django para mandrill.
