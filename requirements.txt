@@ -49,7 +49,7 @@ pycurl==7.19.3
 pyserial==2.6
 python-apt==0.9.3.5ubuntu2
 python-debian==0.1.21-nmu2ubuntu2
-python-gnupg==0.3.7
+python-gnupg==0.4.4
 pytz==2015.4
 requests==2.2.1
 six==1.5.2
