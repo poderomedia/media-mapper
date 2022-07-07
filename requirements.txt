@@ -51,7 +51,7 @@ python-apt==0.9.3.5ubuntu2
 python-debian==0.1.21-nmu2ubuntu2
 python-gnupg==0.3.7
 pytz==2015.4
-requests==2.2.1
+requests==2.20.0
 six==1.5.2
 sphinx-me==0.3
 ssh-import-id==3.21
